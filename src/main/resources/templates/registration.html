@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/loginStyle.css">
+    <meta charset="utf-8">
+    <title>Register</title>
+    <style>
+    </style>
+    <script type="text/javascript">
+
+    </script>
+</head>
+
+<body>
+    <section class="container-fluid">
+        <section class="row justify-content-center">
+            <section class="col-12 col-sm-6 col-md-3">
+                <img src="/images/user.png" class="bg">
+                <form class="form-container" autocomplete="off" action="#" th:action="@{/registration}"
+                  th:object="${user}" method="post"
+                  role="form">
+                    <h4 class="text-center font-weight-bold">Kullanıcı Kayıt</h4>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                            placeholder="E-mail" th:field="*{email}">
+                             <label
+                            th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+                            class="validation-message"></label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="kAdi" placeholder="Kullanıcı Adı" th:field="*{userName}">
+                        <label
+                            th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"
+                            class="validation-message"></label>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" placeholder="Şifre" th:field="*{password}">
+                        <label
+                            th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                            class="validation-message"></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Kayıt Ol</button>
+                </form>
+            </section>
+        </section>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+.vertical-center {
+	min-height: 100%;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+input[type=checkbox] {
+	border: 0px;
+	width: 100%;
+	height: 2em;
+}
+
+body {
+	background-color: #e9ecef;
+	padding-top: 56px;
+}
+
+input[type=radio] {
+	border: 0px;
+	width: 100%;
+	height: 2em;
+}
+
+#div1 {
+	min-height: 400px;
+    height: auto !important;
+	height: 100%;
+	background-color: #e9ecef;
+	padding-bottom: 50px;
+}
+
+#survey {
+	min-height: 400px;
+    height: auto !important;
+	height: 100%;
+	background-color: #e9ecef;
+	padding-bottom: 50px;
+}
+
+.box {
+	border: 3px solid #666;
+	background-color: #ddd;
+	border-radius: .5em;
+	padding: 10px;
+	cursor: move;
+}
+
+.card-body {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 10px;
+}
+
+.slidecontainer {
+	width: 100%;
+}
+
+.slider {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 15px;
+	border-radius: 5px;
+	background: #90CAF9;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #4CAF50;
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #4CAF50;
+	cursor: pointer;
+}
+/*yýldýz yapýmý*/ 
+.container .edit{
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+}
+.container .edit:hover{
+  text-decoration: underline;
+}
+.container .star-widget input{
+  display: none;
+}
+.star-widget label{
+  color: #444;
+  padding: 7px;
+  float: right;
+  transition: all 0.2s ease;
+}
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
+  color: #fd4;
+}
+input:checked ~ label{
+  color: #fd4;
+}
+input:checked ~ form{
+  display: block;
+}
+.modal {
+	display: none; /* Hidden by default */
+	position: centered; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 200px; /* Location of the box */
+	padding-left: 350px;
+	padding-right: 160px;
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+}
+
+/* The Close Button */
+.close {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover, .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}

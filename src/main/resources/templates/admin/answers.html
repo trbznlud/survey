@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<style>
+</style>
+<title>Anketlerim</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+	crossorigin="anonymous">
+<meta charset="utf-8">
+<link rel="shortcut icon" href="#">
+<link rel="stylesheet" href="/css/survey.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+	integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+	integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+	crossorigin="anonymous"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="home">Survey Application</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarResponsive" aria-controls="navbarResponsive"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a class="nav-link" href="/admin/home">AnaSayfa
+							<span class="sr-only">(current)</span>
+					</a></li>
+					<li class="nav-item active"><a class="nav-link" href="/admin/surveys">Anketlerim
+							<span class="sr-only">(current)</span>
+					</a></li>
+					<li>
+						<form th:action="@{/logout}" method="get">
+							<button type="submit" class="btn btn-dark">Çıkış</button>
+						</form>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="jumbotron vertical-center">
+		<div class="container">
+			<table class="table table-dark">
+				<thead>
+					<tr>
+						<th class="text-center" scope="col">Soru</th>
+						<th class="text-center" scope="col">Cevap Sayısı</th>
+						<th class="text-center" scope="col">Cevap</th>
+						<th class="text-center" scope="col">Ortalama</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="answer : ${Answers}">
+						<td class="text-center" th:text="${answer.cevapSoru}"></td>
+						<td class="text-center" th:text="${answer.cevapSayisi}"></td>
+						<td class="text-center" th:text="${answer.cevapSecenek}"></td>
+						<td class="text-center" th:text="${answer.cevapYuzde}"></td>
+					</tr>
+					<tr th:each="answer2 : ${Answers2}">
+						<td class="text-center" th:text="${answer2.cevapSoru}"></td>
+						<td class="text-center" th:text="${answer2.cevapSayisi}"></td>
+						<td class="text-center" th:text="${answer2.cevapSecenek}"></td>
+						<td class="text-center" th:text="${answer2.cevapYuzde}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

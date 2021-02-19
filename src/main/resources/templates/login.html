@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="/css/loginStyle.css">
+<meta charset="utf-8">
+<title>Login</title>
+<style>
+</style>
+<script type="text/javascript">
+	
+</script>
+</head>
+
+<body>
+	<section class="container-fluid">
+		<section class="row justify-content-center">
+			<section class="col-12 col-sm-6 col-md-3">
+				<img src="/images/user.png" class="bg">
+				<form class="form-singin form-container" th:action="@{/login}"
+					method="POST">
+					<h4 class="text-center font-weight-bold">Kullanıcı Girişi</h4>
+					<div class="form-group">
+						<input type="text" class="form-control" id="userName"
+							name="user_name" aria-describedby="emailHelp"
+							placeholder="Kullanıcı Adı">
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" id="password"
+							name="password" placeholder="Şifre">
+					</div>
+					<div class="form-row ml-2">
+						<div class="form-check">
+						
+						</div>
+						<div class="col pb-3 text-right">
+							<a th:href="registration" class="stretched-link">Kayıt Ol</a>
+						</div>
+					</div>
+					<div align="center" th:if="${param.error}">
+						<p style="font-size: 20; color: #FF1C19;">Kullanıcı adı veya şifreniz yanlış.</p>
+					</div>
+					<button type="submit" class="btn btn-primary btn-block"
+						name="Submit">Giriş</button>
+				</form>
+			</section>
+		</section>
+	</section>
+</body>
+
+</html>
